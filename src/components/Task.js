@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Task({text}) {
+function Task({text, tasks, setTasks}) {
 
   //events
   const deleteHandler = () => {
@@ -11,10 +11,12 @@ function Task({text}) {
   const editHandler = () => {
     console.log('edit');
   }
-  
+
   return (
     <div>
       <h4>{text}</h4>
+      <button onClick={editHandler}>edit</button>
+      <button onClick={deleteHandler}>delete</button>
     </div>
   )
 }

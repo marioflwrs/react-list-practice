@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <TaskForm tasks={tasks} setTasks={setTasks} inputField={inputField} setInputField={setInputField} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} setInputField={setInputField} />
 
       <h1>{inputField}</h1>
     </div>
