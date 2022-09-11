@@ -14,6 +14,7 @@ function TaskForm({ inputField, setInputField, tasks, setTasks, setStatus }) {
 
   const statusHandler = (e) => {
     setStatus(e.target.value);
+    console.log(e.target.value);
   }
   
   return ( 

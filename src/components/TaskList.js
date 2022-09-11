@@ -2,11 +2,11 @@ import React from 'react'
 
 import Task from './Task'
 
-function TaskList({tasks, setTasks}) {
+function TaskList({tasks, setTasks, filteredTasks}) {
   // console.log(tasks);
   return (
     <div>
-      {tasks.map((task) => (
+      {filteredTasks.map((task) => (
         <Task 
           text={task.text} 
           key={task.id} 

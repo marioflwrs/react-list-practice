@@ -1,6 +1,6 @@
 import './task-style.scss';
 
-const Task = ({text, task, tasks, setTasks}) => {
+const Task = ({text, task, tasks, setTasks, status, setStatus}) => {
 
   //delete handler
   const deleteHandler = () => {
@@ -18,7 +18,7 @@ const Task = ({text, task, tasks, setTasks}) => {
         }
       }
       return item;
-    }))    
+    }))
   }
 
   return (
