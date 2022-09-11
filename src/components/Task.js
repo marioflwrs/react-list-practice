@@ -1,4 +1,4 @@
-import React from 'react'
+import './task-style.scss';
 
 const Task = ({text, task, tasks, setTasks}) => {
 
@@ -9,7 +9,7 @@ const Task = ({text, task, tasks, setTasks}) => {
 
   }
 
-  //edit handler
+  //task completed handler
   const taskCompletedHandler = () => {
     setTasks(tasks.map((item) => {
       if (item.id === task.id) {
@@ -23,7 +23,7 @@ const Task = ({text, task, tasks, setTasks}) => {
 
   return (
     <div>
-      <h4>{text}</h4>
+      <h4 className={`${task.completed ? "taskCompleted" : ''}`}>{text}</h4>
       <button onClick={taskCompletedHandler}>done</button>
       <button onClick={deleteHandler}>delete</button>
     </div>
