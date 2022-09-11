@@ -8,17 +8,12 @@ function TaskForm({ inputField, setInputField, tasks, setTasks, setStatus }) {
 
   const submitTaskHandler = (e) => {    
     e.preventDefault();
-
-    //save task to local storage
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log(localStorage.getItem('tasks'));
     setTasks([...tasks, {text: inputField, completed: false, id: Math.random() * 1000}]);
     setInputField('');
   }
 
   const statusHandler = (e) => {
     setStatus(e.target.value);
-    console.log(statusHandler);
   }
   
   return ( 

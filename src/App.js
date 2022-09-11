@@ -22,7 +22,7 @@ function App() {
 
       <TaskList 
       tasks={tasks} 
-      etTasks={setTasks} 
+      setTasks={setTasks} 
       />
 
       <h1>{inputField}</h1>
