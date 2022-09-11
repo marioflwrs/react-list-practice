@@ -5,7 +5,7 @@ const Task = ({text, task, tasks, setTasks}) => {
   //delete handler
   const deleteHandler = () => {
     console.log(task);
-    setTasks(tasks.filter((el) => el.id !== task.id));
+    setTasks(tasks.filter((item) => item.id !== task.id));
 
   }
 
