@@ -1,21 +1,30 @@
 import React from 'react'
 
-function Task({text, tasks, setTasks}) {
+const Task = ({text, task, tasks, setTasks}) => {
 
-  //events
+  //delete handler
   const deleteHandler = () => {
-    console.log('delete');
+    console.log(task);
+    setTasks(tasks.filter((el) => el.id !== task.id));
+
   }
 
   //edit handler
-  const editHandler = () => {
-    console.log('edit');
+  const taskCompletedHandler = () => {
+    setTasks(tasks.map((item) => {
+      if (item.id === task.id) {
+        return {
+          ...item, completed: !item.completed
+        }
+      }
+      return item;
+    }))    
   }
 
   return (
     <div>
       <h4>{text}</h4>
-      <button onClick={editHandler}>edit</button>
+      <button onClick={taskCompletedHandler}>done</button>
       <button onClick={deleteHandler}>delete</button>
     </div>
   )
