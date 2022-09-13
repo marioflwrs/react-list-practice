@@ -47,8 +47,9 @@ function App() {
     if(localStorage.getItem('tasks') === null) {
       localStorage.setItem('tasks', JSON.stringify([]))
     } else {
-      let localTasks = localStorage.getItem('tasks', JSON.stringify(tasks));
-      setTasks(JSON.parse(localTasks));
+      let localTasks = JSON.parse(localStorage.getItem('tasks'));
+      //setTasks(localTasks);
+      console.log(localTasks);
     }
   }
   
