@@ -17,7 +17,7 @@ function TaskForm({ inputField, setInputField, tasks, setTasks, setStatus }) {
     console.log(e.target.value);
   }
   
-  return ( 
+  return (
     <form onSubmit={submitTaskHandler}>
       <input value={inputField} type="text" onChange={inputTaskHandler} />
       <button onClick={submitTaskHandler}>submit</button>

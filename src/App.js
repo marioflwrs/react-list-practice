@@ -12,9 +12,9 @@ function App() {
   const [filteredTasks, setFilteredTasks] = useState([]);
 
 
-  // useEffect(() => {
-  //   getLocalTasks();
-  // }, []);
+  useEffect(() => {
+    getLocalTasks();
+  }, []);
 
   useEffect(() => {
     filterHandler();
@@ -39,17 +39,18 @@ function App() {
   //save to local storage
   const saveLocalTasks = () => {
       localStorage.setItem('tasks', JSON.stringify(tasks));
+      console.log(localStorage);
   }
 
-  // //get local tasks
-  // const getLocalTasks = () => {
-  //   if(localStorage.getItem('tasks') === null) {
-  //     localStorage.setItem('tasks', JSON.stringify([]))
-  //   } else {
-  //    let localTasks = localStorage.getItem('tasks', JSON.stringify(tasks));
-  //    setTasks(localTasks);
-  //   }
-  // }
+  //get local tasks
+  const getLocalTasks = () => {
+    if(localStorage.getItem('tasks') === null) {
+      localStorage.setItem('tasks', JSON.stringify([]))
+    } else {
+      let localTasks = localStorage.getItem('tasks', JSON.stringify(tasks));
+      setTasks(JSON.parse(localTasks));
+    }
+  }
   
 
   return (
