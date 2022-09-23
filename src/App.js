@@ -1,4 +1,3 @@
-import './App.scss';
 import { useState, useEffect } from 'react';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
@@ -39,7 +38,6 @@ function App() {
   //save to local storage
   const saveLocalTasks = () => {
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      console.log(localStorage);
   }
 
   //get local tasks

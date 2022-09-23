@@ -19,7 +19,12 @@ function TaskForm({ inputField, setInputField, tasks, setTasks, setStatus }) {
   
   return (
     <form onSubmit={submitTaskHandler}>
-      <input value={inputField} type="text" onChange={inputTaskHandler} />
+      <input 
+        value={inputField} 
+        type="text" 
+        onChange={inputTaskHandler} 
+        className="outline-current border-2 border-rose-500" 
+      />
       <button onClick={submitTaskHandler}>submit</button>
       <div className="filter-container">
         <select onChange={statusHandler}>

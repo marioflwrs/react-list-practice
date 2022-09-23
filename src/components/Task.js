@@ -1,4 +1,5 @@
 import './task-style.scss';
+import { FaTrash } from 'react-icons/fa';
 
 const Task = ({text, task, tasks, setTasks, status, setStatus}) => {
 
@@ -22,10 +23,10 @@ const Task = ({text, task, tasks, setTasks, status, setStatus}) => {
   }
 
   return (
-    <div>
+    <div className='text-2xl font-light'>
       <h4 className={`${task.completed ? "taskCompleted" : ''}`}>{text}</h4>
-      <button onClick={taskCompletedHandler}>done</button>
-      <button onClick={deleteHandler}>delete</button>
+      <button onClick={taskCompletedHandler}>completed</button>
+      <button onClick={deleteHandler}><FaTrash/></button>
     </div>
   )
 }
